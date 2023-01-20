@@ -1,0 +1,9 @@
+Script started on Wed 18 Jan 2023 04:19:00 PM CST
+[root@localhost ~]# more /proc/cpuinfo > cpuinfo.txt
+[root@localhost ~]# more /proc/cpuinfo > cpuinfo.txt[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kmeminfo > meminfo.txt
+[root@localhost ~]# more /proc/meminfo > meminfo.txt[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Klsp[K[K[Kinterrupts > interrupts.txt
+[root@localhost ~]# more /proc/interrupts > interrupts.txt[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Klspci > lspci.txt
+[root@localhost ~]# exit
+exit
+
+Script done on Wed 18 Jan 2023 04:19:47 PM CST

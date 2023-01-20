@@ -1,0 +1,113 @@
+Script started on Wed 18 Jan 2023 04:47:07 PM CST
+[root@localhost ~]# gcc -v
+Using built-in specs.
+COLLECT_GCC=gcc
+COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/4.8.5/lto-wrapper
+Target: x86_64-redhat-linux
+Configured with: ../configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-bootstrap --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-linker-hash-style=gnu --enable-languages=c,c++,objc,obj-c++,java,fortran,ada,go,lto --enable-plugin --enable-initfini-array --disable-libgcj --with-isl=/builddir/build/BUILD/gcc-4.8.5-20150702/obj-x86_64-redhat-linux/isl-install --with-cloog=/builddir/build/BUILD/gcc-4.8.5-20150702/obj-x86_64-redhat-linux/cloog-install --enable-gnu-indirect-function --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linux
+Thread model: posix
+gcc version 4.8.5 20150623 (Red Hat 4.8.5-44) (GCC) 
+[root@localhost ~]# gcc-g -[K[K[K[K -g -lm -o simple simple.c
+[root@localhost ~]# ldd simple
+	linux-vdso.so.1 =>  (0x00007fffdcb85000)
+	libm.so.6 => /lib64/libm.so.6 (0x00007fe0b6b85000)
+	libc.so.6 => /lib64/libc.so.6 (0x00007fe0b67b7000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007fe0b6e87000)
+[root@localhost ~]# ./simple
+Average square root value of the array: 2.422984 
+[root@localhost ~]# gdb
+GNU gdb (GDB) Red Hat Enterprise Linux 7.6.1-120.el7
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-redhat-linux-gnu".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Breakpoint 1 at 0x4005a5: file simple.c, line 5.
+Breakpoint 2 at 0x4004a0
+/root/.gdbinit:4: Error in sourced command file:
+The program has no registers now.
+(gdb) r
+Starting program: /root/simple 
+
+Breakpoint 1, main () at simple.c:5
+5		int arrayFib[10] = {0,1,1,2,3,5,8,13,21,34};
+Missing separate debuginfos, use: debuginfo-install glibc-2.17-326.el7_9.x86_64
+(gdb) n
+6		double total = 0;
+(gdb) n
+9		for (i = 0; i < 10; i++) {
+(gdb) n
+10			total = total + sqrt(arrayFib[i]);
+(gdb) n
+
+Breakpoint 2, 0x00007ffff7aff690 in sqrt () from /lib64/libm.so.6
+(gdb) c
+Continuing.
+
+Breakpoint 2, 0x00007ffff7aff690 in sqrt () from /lib64/libm.so.6
+(gdb) c
+Continuing.
+
+Breakpoint 2, 0x00007ffff7aff690 in sqrt () from /lib64/libm.so.6
+(gdb) c
+Continuing.
+
+Breakpoint 2, 0x00007ffff7aff690 in sqrt () from /lib64/libm.so.6
+(gdb) c
+Continuing.
+
+Breakpoint 2, 0x00007ffff7aff690 in sqrt () from /lib64/libm.so.6
+(gdb) c
+Continuing.
+
+Breakpoint 2, 0x00007ffff7aff690 in sqrt () from /lib64/libm.so.6
+(gdb) c
+Continuing.
+
+Breakpoint 2, 0x00007ffff7aff690 in sqrt () from /lib64/libm.so.6
+(gdb) c
+Continuing.
+
+Breakpoint 2, 0x00007ffff7aff690 in sqrt () from /lib64/libm.so.6
+(gdb) s[Kc
+Continuing.
+
+Breakpoint 2, 0x00007ffff7aff690 in sqrt () from /lib64/libm.so.6
+(gdb) s
+Single stepping until exit from function sqrt,
+which has no line number information.
+main () at simple.c:9
+9		for (i = 0; i < 10; i++) {
+(gdb) s
+10			total = total + sqrt(arrayFib[i]);
+(gdb) s
+
+Breakpoint 2, 0x00007ffff7aff690 in sqrt () from /lib64/libm.so.6
+(gdb) n
+Single stepping until exit from function sqrt,
+which has no line number information.
+main () at simple.c:9
+9		for (i = 0; i < 10; i++) {
+(gdb) n
+13		double average = total / 10;
+(gdb) n
+15		printf("Average square root value of the array: %f \n", average);
+(gdb) n
+Average square root value of the array: 2.422984 
+16		return 0;
+(gdb) n
+17	}
+(gdb) n
+0x00007ffff772d555 in __libc_start_main () from /lib64/libc.so.6
+(gdb) n
+Single stepping until exit from function __libc_start_main,
+which has no line number information.
+[Inferior 1 (process 18901) exited normally]
+(gdb) quit
+[root@localhost ~]# exit
+exit
+
+Script done on Wed 18 Jan 2023 04:49:19 PM CST

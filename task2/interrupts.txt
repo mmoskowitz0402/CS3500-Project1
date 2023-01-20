@@ -1,0 +1,31 @@
+           CPU0       CPU1       CPU2       CPU3       
+  0:        136          0          0          0   IO-APIC-edge      timer
+  1:       7100          0          0          0   IO-APIC-edge      i8042
+  8:          0          0          0          0   IO-APIC-edge      rtc0
+  9:          0          0          0          0   IO-APIC-fasteoi   acpi
+ 12:        156          0          0          0   IO-APIC-edge      i8042
+ 14:          0          0          0          0   IO-APIC-edge      ata_piix
+ 15:       1576          0          0          0   IO-APIC-edge      ata_piix
+ 18:         63       9599          0          0   IO-APIC-fasteoi   vmwgfx
+ 19:         25          0        757          0   IO-APIC-fasteoi   ehci_hcd:usb1, enp0s3
+ 21:      11728          0          0          0   IO-APIC-fasteoi   0000:00:0d.0, snd_intel8x0
+ 22:         26          0          0          0   IO-APIC-fasteoi   ohci_hcd:usb2
+NMI:          0          0          0          0   Non-maskable interrupts
+LOC:      40945      31507      20557     108904   Local timer interrupts
+SPU:          0          0          0          0   Spurious interrupts
+PMI:          0          0          0          0   Performance monitoring interrupts
+IWI:       1567       1006        345       7386   IRQ work interrupts
+RTR:          0          0          0          0   APIC ICR read retries
+RES:      19483      22580      18535      17751   Rescheduling interrupts
+CAL:        769       5107       3441       2709   Function call interrupts
+TLB:       1300        885       1764       1168   TLB shootdowns
+TRM:          0          0          0          0   Thermal event interrupts
+THR:          0          0          0          0   Threshold APIC interrupts
+DFR:          0          0          0          0   Deferred Error APIC interrupts
+MCE:          0          0          0          0   Machine check exceptions
+MCP:          6          6          6          6   Machine check polls
+ERR:          0
+MIS:          0
+PIN:          0          0          0          0   Posted-interrupt notification event
+NPI:          0          0          0          0   Nested posted-interrupt event
+PIW:          0          0          0          0   Posted-interrupt wakeup event
